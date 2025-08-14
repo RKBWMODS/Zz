@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DIZ FLYZE SHOP</title>
+<title>DIZ FLYZE SHOP | Modern</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 * {
@@ -42,7 +43,7 @@ body::before {
 .page.active {
     display: block;
 }
-.header-card, .product-card, .info-card, .qr-card {
+.header-card, .product-card, .info-card, .qr-card, .testimonial-card {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -51,13 +52,12 @@ body::before {
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    /* PERBAIKAN: Efek masuk ke dalam */
     box-shadow: 
         inset 0 0 15px rgba(0, 0, 0, 0.5),
         inset 0 0 30px rgba(0, 0, 0, 0.3),
         0 0 10px rgba(0, 0, 0, 0.2);
 }
-.header-card.visible, .product-card.visible, .info-card.visible, .qr-card.visible {
+.header-card.visible, .product-card.visible, .info-card.visible, .qr-card.visible, .testimonial-card.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -86,7 +86,6 @@ body::before {
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid rgba(255, 255, 255, 0.1);
-    /* PERBAIKAN: Efek masuk ke dalam */
     box-shadow: 
         inset 0 0 15px rgba(0, 0, 0, 0.5),
         inset 0 0 30px rgba(0, 0, 0, 0.3);
@@ -133,7 +132,6 @@ body::before {
 }
 .product-card:hover {
     transform: translateY(-5px);
-    /* PERBAIKAN: Efek masuk ke dalam saat hover */
     box-shadow: 
         inset 0 0 20px rgba(0, 0, 0, 0.6),
         inset 0 0 40px rgba(0, 0, 0, 0.4),
@@ -146,7 +144,6 @@ body::before {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    /* PERBAIKAN: Efek masuk ke dalam */
     box-shadow: 
         inset 0 0 15px rgba(0, 0, 0, 0.5),
         inset 0 0 30px rgba(0, 0, 0, 0.3);
@@ -240,7 +237,6 @@ body::before {
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    /* PERBAIKAN: Efek masuk ke dalam */
     box-shadow: 
         inset 0 0 10px rgba(0, 0, 0, 0.4),
         inset 0 0 20px rgba(0, 0, 0, 0.2);
@@ -260,7 +256,6 @@ body::before {
 }
 .qr-button:hover, .youtube-button:hover, .whatsapp-button:hover {
     transform: translateY(-3px);
-    /* PERBAIKAN: Efek masuk ke dalam saat hover */
     box-shadow: 
         inset 0 0 15px rgba(0, 0, 0, 0.6),
         inset 0 0 30px rgba(0, 0, 0, 0.4);
@@ -296,13 +291,11 @@ body::before {
     background-color: #4a4a4a;
     transition: all 0.3s ease;
     cursor: pointer;
-    /* PERBAIKAN: Efek masuk ke dalam */
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .dot.active {
     background-color: white;
     animation: pulse 1s infinite;
-    /* PERBAIKAN: Efek masuk ke dalam */
     box-shadow: inset 0 0 10px rgba(255,255,255,0.5);
 }
 @keyframes pulse {
@@ -322,7 +315,6 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* PERBAIKAN: Efek masuk ke dalam */
     box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4);
 }
 .nav-btn:hover {
@@ -333,10 +325,10 @@ body::before {
     padding: 20px;
     text-align: left;
     transition: all 0.3s ease;
+    margin-bottom: 20px;
 }
 .info-card:hover {
     transform: translateY(-3px);
-    /* PERBAIKAN: Efek masuk ke dalam saat hover */
     box-shadow: 
         inset 0 0 20px rgba(0, 0, 0, 0.6),
         inset 0 0 40px rgba(0, 0, 0, 0.4);
@@ -392,7 +384,6 @@ body::before {
     padding: 15px;
     margin-bottom: 25px;
     display: inline-block;
-    /* PERBAIKAN: Efek masuk ke dalam */
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
     position: relative;
     overflow: hidden;
@@ -426,6 +417,118 @@ body::before {
     margin-left: auto;
     margin-right: auto;
 }
+/* START: Card Testimoni */
+.testimonial-card {
+    padding: 25px 20px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 20px;
+}
+.testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        inset 0 0 20px rgba(0, 0, 0, 0.6),
+        inset 0 0 40px rgba(0, 0, 0, 0.4);
+}
+.testimonial-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    background: linear-gradient(90deg, #FF416C, #FF4B2B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.testimonial-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #FF416C, transparent);
+    border-radius: 2px;
+}
+.testimonial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.testimonial-image {
+    width: 100%;
+    max-width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 
+        inset 0 0 15px rgba(0, 0, 0, 0.5),
+        inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+.testimonial-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.3), transparent);
+    z-index: 1;
+}
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+    transition: transform 0.5s ease;
+}
+.testimonial-image:hover img {
+    transform: scale(1.05);
+}
+.testimonial-text {
+    background: rgba(30, 30, 30, 0.6);
+    border-radius: 10px;
+    padding: 15px;
+    border-left: 3px solid #FF416C;
+    text-align: left;
+}
+.testimonial-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 10px;
+}
+.testimonial-author {
+    font-weight: 600;
+    color: #FF416C;
+    text-align: right;
+    font-style: italic;
+}
+.testimonial-slider {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+.testimonial-slider .dot {
+    background-color: #555;
+}
+.testimonial-slider .dot.active {
+    background-color: #FF416C;
+    animation: testimonialPulse 1.5s infinite;
+}
+@keyframes testimonialPulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+/* END: Card Testimoni */
 .particles {
     position: fixed;
     top: 0;
@@ -453,6 +556,9 @@ body::before {
     .product-content h2 { font-size: 18px; }
     .price { font-size: 28px; }
     .qr-image img { width: 200px; height: 200px; }
+    .back-button { top: 15px; left: 15px; }
+    .testimonial-image { height: 180px; }
+    .testimonial-card h3 { font-size: 20px; }
 }
 .image-loader {
     position: absolute;
@@ -503,6 +609,40 @@ body::before {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+.back-button {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 
+        inset 0 0 8px rgba(0, 0, 0, 0.4),
+        0 0 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: 
+        inset 0 0 12px rgba(0, 0, 0, 0.6),
+        0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.back-button:active {
+    transform: scale(0.95);
+}
 </style>
 </head>
 <body>
@@ -551,8 +691,20 @@ body::before {
             <li>Update tidak perlu download ulang karena dari sistem sudah otomatis.</li>
         </ul>
     </div>
+    <div class="testimonial-card fade-in">
+        <div class="neon-border"></div>
+        <h3>TESTIMONI</h3>
+        <div class="testimonial-content">
+            <div class="testimonial-image">
+                <div class="image-loader"></div>
+                <img src="https://via.placeholder.com/400x300?text=Screenshot+Testimoni+WhatsApp" alt="Testimoni" onload="this.parentNode.querySelector('.image-loader').style.display='none'">
+            </div>
+        </div>
+    </div>
 </div>
 <div id="qr-page" class="page">
+    <button class="back-button" onclick="showMainPage()"><i class="fa-solid fa-arrow-left-long"></i></button>
+    
     <div class="header-card fade-in">
         <div class="neon-border"></div>
         <div class="profile-image">
@@ -590,6 +742,12 @@ const products = [
         features: ["Banned Spam","Menerima Update 2 Bulan","Banned Mudah Di Buka","Jarang Dapat Update","Waktu Tunggu 3 Hari"]
     }
 ];
+const testimonials = [
+    {
+        img: "https://i.ibb.co.com/9m2PbK5M/20250815-012659.jpg",
+    }
+];
+
 const preloadedImages = [];
 products.forEach(p => {
     const img = new Image();
@@ -597,7 +755,10 @@ products.forEach(p => {
     preloadedImages.push(img);
 });
 let currentSlideIndex = 0;
+let currentTestimonialIndex = 0;
 let autoSlideInterval;
+let testimonialInterval;
+
 function showSlide(index) {
     const product = products[index];
     const imgElement = document.querySelector('.product-icon img');
@@ -631,39 +792,98 @@ function showSlide(index) {
     });
     currentSlideIndex = index;
 }
+
+function showTestimonial(index) {
+    const testimonial = testimonials[index];
+    const testimonialImage = document.querySelector('.testimonial-image img');
+    const testimonialText = document.querySelector('.testimonial-text p');
+    const testimonialAuthor = document.querySelector('.testimonial-author');
+    const loader = document.querySelector('.testimonial-image .image-loader');
+    
+    loader.style.display = 'block';
+    testimonialImage.classList.add('fade-slide');
+    
+    setTimeout(() => {
+        testimonialImage.src = testimonial.img;
+        testimonialImage.onload = function() {
+            testimonialImage.classList.add('show');
+            loader.style.display = 'none';
+        };
+        testimonialText.textContent = testimonial.text;
+        testimonialAuthor.textContent = `- ${testimonial.author}`;
+    }, 300);
+    
+    const testimonialDots = document.querySelectorAll('.testimonial-slider .dot');
+    testimonialDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+        if (i === index) {
+            dot.style.animation = 'testimonialPulse 1.5s infinite';
+        } else {
+            dot.style.animation = 'none';
+        }
+    });
+    
+    currentTestimonialIndex = index;
+}
+
 function nextSlide() {
     const nextIndex = (currentSlideIndex + 1) % products.length;
     showSlide(nextIndex);
 }
+
 function prevSlide() {
     const prevIndex = (currentSlideIndex - 1 + products.length) % products.length;
     showSlide(prevIndex);
 }
+
+function nextTestimonial() {
+    const nextIndex = (currentTestimonialIndex + 1) % testimonials.length;
+    showTestimonial(nextIndex);
+}
+
+function prevTestimonial() {
+    const prevIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(prevIndex);
+}
+
 function showQRPage() {
     document.getElementById('main-page').classList.remove('active');
     document.getElementById('qr-page').classList.add('active');
     clearInterval(autoSlideInterval);
+    clearInterval(testimonialInterval);
 }
+
 function showMainPage() {
     document.getElementById('main-page').classList.add('active');
     document.getElementById('qr-page').classList.remove('active');
     startAutoSlide();
+    startTestimonialSlide();
 }
+
 function openWhatsApp() {
     window.open('https://wa.me/6288980724038', '_blank');
 }
+
 function openYoutube() {
     window.open('https://youtu.be/SKTYn7ZngDs?si=fUZoqTOwA7MgVz38', '_blank');
 }
+
 function startAutoSlide() {
     clearInterval(autoSlideInterval);
-    autoSlideInterval = setInterval(nextSlide, 12000);
+    autoSlideInterval = setInterval(nextSlide, 7000);
 }
+
+function startTestimonialSlide() {
+    clearInterval(testimonialInterval);
+    testimonialInterval = setInterval(nextTestimonial, 8000);
+}
+
 document.addEventListener('keydown', function(event) {
     if (event.key === 'ArrowLeft') prevSlide();
     else if (event.key === 'ArrowRight') nextSlide();
     else if (event.key === 'Escape') showMainPage();
 });
+
 let startX = 0;
 let endX = 0;
 document.addEventListener('touchstart', function(event) { 
@@ -703,6 +923,7 @@ function createParticles() {
 }
 document.addEventListener('DOMContentLoaded', function() {
     showSlide(0);
+    showTestimonial(0);
     const scrollElements = document.querySelectorAll('.fade-in');
     const elementInView = (el, offset = 100) => { 
         const elementTop = el.getBoundingClientRect().top;
@@ -732,10 +953,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     createParticles();
     startAutoSlide();
+    startTestimonialSlide();
     createNeonEffects();
+    const testimonialDots = document.querySelectorAll('.testimonial-slider .dot');
+    testimonialDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showTestimonial(index);
+        });
+    });
 });
 function createNeonEffects() {
-    document.querySelectorAll('.header-card, .product-card, .info-card, .qr-card').forEach(card => {
+    document.querySelectorAll('.header-card, .product-card, .info-card, .qr-card, .testimonial-card').forEach(card => {
         const neonBorder = document.createElement('div');
         neonBorder.classList.add('neon-border');
         card.appendChild(neonBorder);

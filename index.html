@@ -236,7 +236,7 @@ body::before {
     top: 0;
     color: #4CAF50;
 }
-.qr-button, .youtube-button, .whatsapp-button {
+.qr-button, .youtube-button, .whatsapp-button, .dana-button {
     border: none;
     border-radius: 25px;
     color: white;
@@ -266,7 +266,11 @@ body::before {
     background: linear-gradient(90deg, #FF416C, #FF4B2B);
     background-size: 200% auto;
 }
-.qr-button:hover, .youtube-button:hover, .whatsapp-button:hover {
+.dana-button {
+    background: linear-gradient(90deg, #FF416C, #FF4B2B);
+    background-size: 200% auto;
+}
+.qr-button:hover, .youtube-button:hover, .whatsapp-button:hover, .dana-button:hover {
     transform: translateY(-3px);
     box-shadow: 
         inset 0 0 15px rgba(0, 0, 0, 0.6),
@@ -274,7 +278,7 @@ body::before {
     background-position: right center;
     filter: brightness(1.2);
 }
-.qr-button:active::after, .youtube-button:active::after, .whatsapp-button:active::after {
+.qr-button:active::after, .youtube-button:active::after, .whatsapp-button:active::after, .dana-button:active::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -659,7 +663,8 @@ body::before {
                 <div>Selamanya Aktif</div>
                 <div>Menerima Update 7 Tahun Full</div>
             </div>
-            <button class="qr-button" onclick="showQRPage()">CLICK TO BUY</button>
+            <button class="qr-button" onclick="showQRPage()">CLICK TO QRIS</button>
+            <button class="dana-button" onclick="openDana()">CLICK TO DANA</button>
             <div class="slider-dots">
                 <button class="nav-btn" onclick="prevSlide()">&lt;</button>
                 <span class="dot active"></span>
@@ -783,6 +788,12 @@ const testimonials = [
     }
 ];
 
+const danaLinks = {
+    "25.000": "https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012092025081624559306",
+    "35.000": "https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012092025081625234952",
+    "70.000": "https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012092025081638847975"
+};
+
 const preloadedImages = [];
 products.forEach(p => {
     const img = new Image();
@@ -903,6 +914,16 @@ function openYoutube() {
     window.open('https://youtu.be/SKTYn7ZngDs?si=fUZoqTOwA7MgVz38', '_blank');
 }
 
+function openDana() {
+    const currentPrice = document.getElementById('product-price').textContent;
+    const danaLink = danaLinks[currentPrice];
+    if (danaLink) {
+        window.open(danaLink, '_blank');
+    } else {
+        alert('Link Dana tidak tersedia untuk harga ini');
+    }
+}
+
 function startAutoSlide() {
     clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(nextSlide, 7000);
@@ -961,7 +982,7 @@ document.addEventListener('DOMContentLoaded', function() {
             displayScrollElement(el);
         }
     });
-    document.querySelectorAll('.qr-button, .youtube-button, .whatsapp-button').forEach(btn => {
+    document.querySelectorAll('.qr-button, .youtube-button, .whatsapp-button, .dana-button').forEach(btn => {
         btn.addEventListener('click', () => {
             btn.classList.add('clicked');
             setTimeout(() => btn.classList.remove('clicked'), 200);
